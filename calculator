@@ -1,0 +1,158 @@
+from tkinter import *
+from tkinter import ttk
+
+message = ""
+#------------------------------------------------------------------------------------------------------------------цифры
+def lala0():
+    global message
+    message += "0"
+    lab["text"] = f"{message}"
+def lala1():
+    global message
+    message += "1"
+    lab["text"] = f"{message}"
+def lala2():
+    global message
+    message += "2"
+    lab["text"] = f"{message}"
+def lala3():
+    global message
+    message += "3"
+    lab["text"] = f"{message}"
+def lala4():
+    global message
+    message += "4"
+    lab["text"] = f"{message}"
+def lala5():
+    global message
+    message += "5"
+    lab["text"] = f"{message}"
+def lala6():
+    global message
+    message += "6"
+    lab["text"] = f"{message}"
+def lala7():
+    global message
+    message += "7"
+    lab["text"] = f"{message}"
+def lala8():
+    global message
+    message += "8"
+    lab["text"] = f"{message}"
+def lala9():
+    global message
+    message += "9"
+    lab["text"] = f"{message}"
+#---------------------------------------------------------------------------------------------внутрепрограммные действия
+def ans():
+    global message
+    answer = eval(message)
+    lab["text"] = f"{answer}"
+def removal():
+    global message
+    message = ""
+    lab["text"] = f"{message}"
+def deletion():
+    global message
+    message = message[:-1] + ""
+    lab["text"] = f"{message}"
+def point():
+    global message
+    message += "."
+    lab["text"] = f"{message}"
+#---------------------------------------------------------------------------------------------------------------действия
+def plus():
+    global message
+    message += "+"
+    lab["text"] = f"{message}"
+def minus():
+    global message
+    message += "-"
+    lab["text"] = f"{message}"
+def multiplication():
+    global message
+    message += "*"
+    lab["text"] = f"{message}"
+def division():
+    global message
+    message += "/"
+    lab["text"] = f"{message}"
+def step():
+    global message
+    message += "**"
+    lab["text"] = f"{message}"
+def bracket_open():
+    global message
+    message += "("
+    lab["text"] = f"{message}"
+def bracket_close():
+    global message
+    message += ")"
+    lab["text"] = f"{message}"
+#-------------------------------------------------------------------------------------------------------------------окно
+root = Tk()
+root.title("Super_Calc")
+root.geometry("400x390")
+root.resizable(False, False)
+
+lab = ttk.Label(text=message, font="Arial 20 normal roman")
+lab.pack()
+signature = ttk.Label(text="____________________| Super_Calc |____________________", font="Arial 10 normal roman")
+signature.pack()
+prog = ttk.Label(text="Programs", font="Arial 10 normal roman")
+prog.place(x=18, y=330)
+byv = ttk.Label(text="by", font="Arial 10 normal roman")
+byv.place(x=37, y=348)
+vo = ttk.Label(text="Vovok", font="Arial 10 normal roman")
+vo.place(x=27, y=366)
+#-----------------------------------------------------------------------------------------------------------------кнопки
+button0 = ttk.Button(text="0", command=lala0)
+button0.place(height=60, width=100, x=100, y=330)
+button1 = ttk.Button(text="1", command=lala1)
+button1.place(height=60, width=100, x=0, y=270)
+button2 = ttk.Button(text="2", command=lala2)
+button2.place(height=60, width=100, x=100, y=270)
+button3 = ttk.Button(text="3", command=lala3)
+button3.place(height=60, width=100, x=200, y=270)
+button4 = ttk.Button(text="4", command=lala4)
+button4.place(height=60, width=100, x=0, y=210)
+button5 = ttk.Button(text="5", command=lala5)
+button5.place(height=60, width=100, x=100, y=210)
+button6 = ttk.Button(text="6", command=lala6)
+button6.place(height=60, width=100, x=200, y=210)
+button7 = ttk.Button(text="7", command=lala7)
+button7.place(height=60, width=100, x=0, y=150)
+button8 = ttk.Button(text="8", command=lala8)
+button8.place(height=60, width=100, x=100, y=150)
+button9 = ttk.Button(text="9", command=lala9)
+button9.place(height=60, width=100, x=200, y=150)
+
+button_plus = ttk.Button(text="+", command=plus)
+button_plus.place(height=60, width=100, x=300, y=270)
+button_minus = ttk.Button(text="-", command=minus)
+button_minus.place(height=60, width=100, x=300, y=210)
+button_multiplication = ttk.Button(text="X", command=multiplication)
+button_multiplication.place(height=60, width=100, x=300, y=150)
+button_division = ttk.Button(text="/", command=division)
+button_division.place(height=60, width=100, x=300, y=90)
+button_step = ttk.Button(text="**", command=step)
+button_step.place(height=60, width=100, x=200, y=90)
+button_br1 = ttk.Button(text="(", command=bracket_open)
+button_br1.place(height=30, width=200, x=0, y=60)
+button_br2 = ttk.Button(text=")", command=bracket_close)
+button_br2.place(height=30, width=200, x=200, y=60)
+
+button_rem = ttk.Button(text="C", command=removal)
+button_rem.place(height=60, width=100, x=0, y=90)
+button_ans = ttk.Button(text="=", command=ans)
+button_ans.place(height=60, width=100, x=300, y=330)
+button_ans = ttk.Button(text="del", command=deletion)
+button_ans.place(height=60, width=100, x=100, y=90)
+button_point = ttk.Button(text=".", command=point)
+button_point.place(height=60, width=100, x=200, y=330)
+
+
+
+#------------------------------------------------------------------------------------------------------------------конец
+
+root.mainloop()
